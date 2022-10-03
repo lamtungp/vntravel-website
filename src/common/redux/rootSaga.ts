@@ -6,6 +6,8 @@ import { getUserProfile } from './user/user.slice';
 import { getMeSaga } from './user/user.saga';
 import { getAddressData } from './address/address.slice';
 import { getAddressSaga } from './address/address.saga';
+import { getPlaceData } from './place/place.slice';
+import { getPlaceSaga } from './place/place.saga';
 
 export default function* rootSaga() {
   // auth
@@ -20,4 +22,7 @@ export default function* rootSaga() {
 
   // address
   yield all([takeLeading(getAddressData.type, getAddressSaga)]);
+
+  // place
+  yield all([takeLeading(getPlaceData.type, getPlaceSaga)]);
 }
