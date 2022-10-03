@@ -95,7 +95,7 @@ const VTAutocomplete = ({
       renderOption={(params: object, option: any) => (
         <Box key={option._id} className={classes.BoxOptions} {...params}>
           <Box sx={{ marginRight: 2 }}>{IconComponent}</Box>
-          {option.title}
+          {option.title || ''}
         </Box>
       )}
       getOptionLabel={(option) => option.title || ''}

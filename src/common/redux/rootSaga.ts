@@ -4,6 +4,8 @@ import { logoutSaga, signinSaga, signupSaga } from './auth/auth.saga';
 import { logout, setSigninData, setSignupData } from './auth/auth.slice';
 import { getUserProfile } from './user/user.slice';
 import { getMeSaga } from './user/user.saga';
+import { getAddressData } from './address/address.slice';
+import { getAddressSaga } from './address/address.saga';
 
 export default function* rootSaga() {
   // auth
@@ -15,4 +17,7 @@ export default function* rootSaga() {
 
   // user
   yield all([takeLeading(getUserProfile.type, getMeSaga)]);
+
+  // address
+  yield all([takeLeading(getAddressData.type, getAddressSaga)]);
 }

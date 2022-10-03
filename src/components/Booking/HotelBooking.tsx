@@ -7,6 +7,11 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import { VTAutocomplete, VTDatePicker } from '@/components/Form';
 import { useBookingStyles } from '@/styles/components/booking';
+import { useAppDispatch, useAppSelector } from '@/common/redux/hooks';
+import {
+  getAddressData,
+  selectAddress,
+} from '@/common/redux/address/address.slice';
 
 type ContentSearch = {
   location: string;
@@ -21,9 +26,20 @@ type HotelBookingProps = {
 
 const HotelBooking = ({ values, setValues }: HotelBookingProps) => {
   const classes = useBookingStyles();
+  const dispatch = useAppDispatch();
+  const listAddress = useAppSelector(selectAddress).map((item) => {
+    return {
+      _id: item._id,
+      title: item.province,
+    };
+  });
 
   const [startDate, setStartDate] = useState<Date>(new Date());
   const [endDate, setEndDate] = useState<Date>(new Date());
+
+  useEffect(() => {
+    dispatch(getAddressData());
+  }, [dispatch]);
 
   useEffect(() => {
     setValues({ type: 'hotel', checkin: startDate, checkout: endDate });
@@ -36,7 +52,7 @@ const HotelBooking = ({ values, setValues }: HotelBookingProps) => {
           IconComponent={<LocationOnOutlined />}
           title="Location"
           placeholder="Where are you from?"
-          data={top100Films}
+          data={listAddress}
           type="search"
           onChange={(_event: any, value: any) => {
             setValues({ ...values, location: value._id });
@@ -90,13 +106,5 @@ const HotelBooking = ({ values, setValues }: HotelBookingProps) => {
     </Grid>
   );
 };
-
-const top100Films = [
-  { title: 'Da Nang', _id: 1994 },
-  { title: 'Ha Noi', _id: 1972 },
-  { title: 'Sai Gon', _id: 1974 },
-  { title: 'Khanh Hoa', _id: 2008 },
-  { title: 'Quang Ninh', _id: 1957 },
-];
 
 export default HotelBooking;
