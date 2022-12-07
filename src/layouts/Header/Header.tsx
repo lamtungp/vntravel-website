@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { makeStyles } from '@mui/styles';
 import {
-  Theme,
   Box,
   Button,
   ListItemIcon,
@@ -15,10 +14,10 @@ import {
   Badge,
   ButtonBase,
   Avatar,
+  Link,
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import { MenuOutlined, NotificationsNoneOutlined } from '@mui/icons-material';
-import Link from 'next/link';
 
 import Logo from '@/components/Logo';
 import { useAppDispatch, useAppSelector } from '@/common/redux/hooks';
@@ -29,26 +28,21 @@ import {
   setCurrencyState,
 } from '@/common/redux/common/common.slice';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   Root: {
     position: 'fixed',
     width: '100%',
     zIndex: 1000,
-    background: 'rgba(249, 250, 251, 0.72)',
     backdropFilter: 'blur(6px)',
   },
 
   Header: {
     maxWidth: 1300,
     display: 'flex',
-    padding: '22px 20px',
+    padding: '12px 20px',
     margin: '0 auto',
     justifyContent: 'space-between',
     alignItems: 'center',
-
-    [theme.breakpoints.down('md')]: {
-      padding: '14px 20px',
-    },
   },
 
   RightNav: {
@@ -132,7 +126,14 @@ const Header = ({ displayToggle, handleLeftDrawerToggle }: any) => {
 
   return (
     <>
-      <Box className={classes.Root} component="header">
+      <Box
+        className={classes.Root}
+        sx={{
+          background:
+            router.pathname === '/' ? 'rgba(249, 250, 251, 0.72)' : '#FFFFFF',
+        }}
+        component="header"
+      >
         <Box className={classes.Header}>
           <Link href="/">
             <Logo />

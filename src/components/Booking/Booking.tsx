@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   BookingContainer: {
     padding: '24px 70px',
     background: '#FFFFFF',
-    borderRadius: 24,
+    borderRadius: 14,
 
     [theme.breakpoints.down('md')]: {
       padding: '12px 20px',

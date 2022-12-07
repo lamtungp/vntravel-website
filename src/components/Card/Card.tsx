@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   Root: {
     border: '1px solid #D6D2D2',
     boxShadow: 'none',
-    borderRadius: 24,
+    borderRadius: 14,
     padding: 24,
 
     '&:hover': {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 
     '& .MuiCardMedia-root': {
-      borderRadius: 24,
+      borderRadius: 14,
     },
 
     '& .MuiCardContent-root': {

@@ -14,9 +14,9 @@ import {
 } from '@/common/redux/address/address.slice';
 
 type ContentSearch = {
-  location: string;
-  checkin: string;
-  checkout: string;
+  location?: string;
+  checkin?: string;
+  checkout?: string;
 };
 
 type HotelBookingProps = {

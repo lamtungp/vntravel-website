@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.grey[50],
     border: '1px solid',
     borderColor: theme.palette.grey[100],
+    borderRadius: 10,
     color: theme.palette.grey[700],
     textTransform: 'none',
 

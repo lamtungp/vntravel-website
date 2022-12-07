@@ -1,21 +1,17 @@
 import React from 'react';
-import { CardMedia, Theme } from '@mui/material';
+import { CardMedia } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   Root: {
     boxShadow: 'none',
-    borderRadius: 24,
+    borderRadius: 14,
     height: '100%',
 
     '&:hover': {
       cursor: 'pointer',
       boxShadow:
         '0px 2px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 2px 0px rgb(0 0 0 / 12%)',
-    },
-
-    [theme.breakpoints.down('sm')]: {
-      borderRadius: 14,
     },
   },
 }));

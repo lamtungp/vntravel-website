@@ -5,19 +5,18 @@ import {
   CardContent,
   Typography,
   Box,
-  Rating,
   Button,
   Theme,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { Star } from '@mui/icons-material';
+import { StarRounded } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme: Theme) => ({
   Root: {
     padding: 24,
     border: '1px solid #D6D2D2',
     boxShadow: 'none',
-    borderRadius: 24,
+    borderRadius: 14,
     display: 'flex',
 
     '&:hover': {
@@ -40,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 
   CardMedia: {
-    borderRadius: 24,
+    borderRadius: 14,
 
     [theme.breakpoints.up(434)]: {
       maxWidth: 183,
@@ -129,14 +128,9 @@ const VTCardTrending = ({
         >
           {title}
         </Typography>
-        <Box sx={{ display: 'flex', marginTop: '4px' }}>
-          <Rating
-            name="hover-feedback"
-            value={rating}
-            precision={0.5}
-            readOnly
-            emptyIcon={<Star style={{ opacity: 0.55 }} fontSize="inherit" />}
-          />
+        <Box sx={{ display: 'flex', margin: '10px 0' }}>
+          <StarRounded htmlColor="#faaf00" sx={{ marginRight: '4px' }} />
+          {rating} (120 reviews)
         </Box>
 
         <Typography

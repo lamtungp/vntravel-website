@@ -19,6 +19,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["process.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["process.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", "src/firebaseInit.js"],
   "exclude": ["node_modules"]
 }

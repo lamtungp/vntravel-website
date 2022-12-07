@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: '#438BF7',
     color: '#fdfdfd',
     borderColor: theme.palette.grey[100],
+    borderRadius: 6,
     textTransform: 'none',
     '&:hover': {
       backgroundColor: theme.palette.primary.light,

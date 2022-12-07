@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: 8,
 
     '& .MuiOutlinedInput-root': {
-      borderRadius: 12,
+      borderRadius: 10,
       paddingRight: 0,
     },
 
