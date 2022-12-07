@@ -9,9 +9,10 @@ import { VTAutocomplete, VTDatePicker } from '@/components/Form';
 import { useBookingStyles } from '@/styles/components/booking';
 
 type ContentSearch = {
-  location: string;
-  checkin: string;
-  checkout: string;
+  location?: string;
+  destination?: string;
+  checkin?: string;
+  checkout?: string;
 };
 
 type FlightBookingProps = {

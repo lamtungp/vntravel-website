@@ -1,5 +1,6 @@
 import { Box, Theme, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { Fade } from 'react-awesome-reveal';
 
 const useStyles = makeStyles((theme: Theme) => ({
   Root: {
@@ -74,12 +75,14 @@ const Banner = () => {
   return (
     <Box className={classes.Root}>
       <Box className={classes.BannerTextBox}>
-        <Typography className={classes.BannerTitle}>
-          Amazing Flight To <br /> Viet Nam
-        </Typography>
-        <Typography className={classes.BannerDescription}>
-          Find and book hotel for great trip
-        </Typography>
+        <Fade direction="left">
+          <Typography className={classes.BannerTitle}>
+            Amazing Flight To <br /> Viet Nam
+          </Typography>
+          <Typography className={classes.BannerDescription}>
+            Find and book hotel for great trip
+          </Typography>
+        </Fade>
       </Box>
     </Box>
   );
